@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 gem 'haml', '~>4.0.6'
 gem 'simple_form'
 gem 'devise', '~>3.4.1'
+gem 'paperclip', '~>4.2.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

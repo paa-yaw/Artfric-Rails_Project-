@@ -4,4 +4,5 @@
 
 %h1 Artworks!
 - @artworks.each do |artwork|
+  =link_to (image_tag artwork.image.url(:small) ), artwork
   %h2= link_to artwork.title, artwork
