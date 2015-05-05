@@ -1,0 +1,8 @@
+%h1= @artwork.title
+%p= @artwork.link
+%p= @artwork.description
+%p= @artwork.artist.name
+
+= link_to "Home", root_path
+= link_to "Edit", edit_artwork_path(@artwork)
+= link_to "Destroy", artwork_path, method: :delete, data: {confirm: 'Are you sure?'}
