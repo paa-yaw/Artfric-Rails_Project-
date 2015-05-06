@@ -7,6 +7,7 @@ class ArtworksController < ApplicationController
   end
 
   def show
+    @comments= Comment.where(artwork_id: @artwork)
   end
 
   def new

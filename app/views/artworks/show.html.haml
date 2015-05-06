@@ -4,6 +4,33 @@
 %p= @artwork.description
 %p= @artwork.artist.name
 
+#comment
+  %h2.comment_count= pluralize(@artwork.comments.count, "Comment")
+  -@comments.each do |comment|
+    .comment
+      %p.username= comment.artist.name
+      %p.content= comment.content
+
+  = render 'comments/form'
+  -#
+  -#<div id=comment>
+  -#  <h2 class=comment_count>
+  -#      <%= pluralize(@artwork.comments.count, "Comment") %>
+  -#  </h2>
+  -# <% comments.each do |comment| %>
+  -#    <div class=comment>
+  -#       <p class=username > <%= comment.artist.name %>
+  -#                           <%= comment.content %>
+  -#       </p>
+        <% end %>
+  -#
+  -#       <%= render 'comments/form' %>
+  -#    </div
+  -#
+  -#</div>
+
+
+
 = link_to "Home", root_path
 = link_to "Edit", edit_artwork_path(@artwork)
 = link_to "Destroy", artwork_path, method: :delete, data: {confirm: 'Are you sure?'}

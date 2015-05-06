@@ -5,4 +5,5 @@ class Artist < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :artworks
+  has_many :comments
 end

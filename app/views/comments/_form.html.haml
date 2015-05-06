@@ -1,0 +1,3 @@
+= simple_form_for ([@artwork, @artwork.comments.build]) do |f|
+  = f.input :content, label: "Reply the thread"
+  = f.button :submit, class: "button"
