@@ -3,6 +3,15 @@
 %p= @artwork.link
 %p= @artwork.description
 %p= @artwork.artist.name
+%p
+  = @artwork.get_upvotes.size
+  Likes
+%p
+  = @artwork.get_downvotes.size
+  Dislikes
+
+= link_to "Like", like_artwork_path(@artwork), method: :get
+= link_to "Dislike", dislike_artwork_path(@artwork), method: :get
 
 
 = render @artwork.comments
