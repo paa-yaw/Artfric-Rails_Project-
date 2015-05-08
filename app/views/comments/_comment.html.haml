@@ -1,0 +1,9 @@
+-##comment
+-#  %h2.comment_count= pluralize(@artwork.comments.count, "Comment")
+-#  -@comments.each do |comment|
+-#    .comment
+
+%p.username= comment.artist.name
+%p.content= comment.content
+
+= link_to "Delete Comment", [comment.artwork, comment], method: :delete, data: {confirm: "Are you sure?"}

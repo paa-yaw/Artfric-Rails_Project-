@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_artist!
 
   def create
     @artwork= Artwork.find(params[:artwork_id])
@@ -11,6 +12,13 @@ class CommentsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @artwork=Artwork.find(params[:artwork_id])
+    @comment= @artwork.comments.find(params[:id])
+    @comment.destroy
+    redirect_to artwork_path(@artwork)
   end
 
 end

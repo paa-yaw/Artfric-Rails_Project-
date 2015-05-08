@@ -4,13 +4,9 @@
 %p= @artwork.description
 %p= @artwork.artist.name
 
-#comment
-  %h2.comment_count= pluralize(@artwork.comments.count, "Comment")
-  -@comments.each do |comment|
-    .comment
-      %p.username= comment.artist.name
-      %p.content= comment.content
 
+= render @artwork.comments
+%h4
   = render 'comments/form'
   -#
   -#<div id=comment>
