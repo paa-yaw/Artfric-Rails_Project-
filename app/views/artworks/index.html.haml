@@ -13,3 +13,5 @@
   %p
     = artwork.get_upvotes.size
     Likes
+
+    = link_to "Like", like_artwork_path(artwork), method: :get
