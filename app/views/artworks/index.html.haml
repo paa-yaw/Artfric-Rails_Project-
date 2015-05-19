@@ -1,8 +1,16 @@
-%h1 Artfric
+%h1
 
 -#= link_to "Add Artwork", new_artwork_path
 
-%h1 Artworks!
+%h1
+- if artist_signed_in?
+  %p#intro
+    Hello
+    = current_artist.name
+    %br/
+    %span
+      Share your artworks with the world
+
 - @artworks.each do |artwork|
   =link_to (image_tag artwork.image.url(:small) ), artwork
   %h2= link_to artwork.title, artwork
